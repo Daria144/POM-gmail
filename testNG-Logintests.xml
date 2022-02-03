@@ -1,0 +1,20 @@
+<suite name="Gmail suite">
+    <test name="Login tests">
+        <groups>
+            <define name="LoginHP">
+                <include name="LoginHPTest"/>
+                <include name="LoginNPTest"/>
+            </define>
+            <run>
+                <include name="LoginHP"/>
+            </run>
+            <classes>
+                <class name="Tests.LoginTest"/>
+            </classes>
+        </groups>
+
+
+    </test>
+
+
+</suite>
