@@ -12,7 +12,8 @@ import java.util.concurrent.TimeUnit;
 public abstract class BaseTest {
     public static WebDriver driver;
 
-    @BeforeClass
+    @BeforeMethod
+            (alwaysRun = true)
     public static void launch(){
         System.setProperty(ConfProperties.getProperty("chromeKey"),ConfProperties.getProperty("chromedriver"));
         driver = new ChromeDriver();
@@ -25,7 +26,7 @@ public abstract class BaseTest {
 
 
 
-    @AfterClass
+    @AfterMethod
             (alwaysRun = true)
     public void turnDown(){
         driver.quit();

@@ -19,16 +19,15 @@ public class LoginTest extends BaseTest{
 
 
     @Test
-            (groups = "LoginHPTest", priority = 1)
+            (groups = "LoginHPTest")
     public void logInWithValidCred(){
         loginContext.logIn(ConfProperties.getProperty("login"),ConfProperties.getProperty("password"));
         Assert.assertTrue(loginContext.userLabelIsDisplayed(),"Successful login Gmail");
-        loginContext.logOutAndLogInWithOtherAccount();
 
     }
 
     @Test
-            (groups = "LoginNPTest",priority = 3)
+            (groups = "LoginNPTest")
     public void logInWithInvalidPwd() {
         loginContext.logIn(ConfProperties.getProperty("login"), "blabla");
         Assert.assertTrue(loginContext.assertLabelIsDisplayed(), "Unsuccessful login entering incorrect password");
