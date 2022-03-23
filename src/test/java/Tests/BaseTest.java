@@ -18,10 +18,10 @@ public abstract class BaseTest {
         System.setProperty(ConfProperties.getProperty("chromeKey"),ConfProperties.getProperty("chromedriver"));
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        //задержка на выполнение теста = 10 сек.
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(ConfProperties.getProperty("loginPage"));
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
     }
 
 
