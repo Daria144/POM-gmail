@@ -33,4 +33,11 @@ public class LoginTest extends BaseTest{
         Assert.assertTrue(loginContext.assertLabelIsDisplayed(), "Unsuccessful login entering incorrect password");
 
     }
+    @Test
+            (groups = "LoginNPTest")
+    public void logInWithInvalidCreds {
+        loginContext.logIn("blabla", "blabla");
+        Assert.assertTrue(loginContext.assertLabelIsDisplayed(), "Unsuccessful login entering incorrect password");
+
+    }
 }
